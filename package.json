@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "babel src --out-dir .compiled --source-maps --watch --verbose"
+    "test": "jest --testPathIgnorePatterns='.compiled/*'",
+    "compile": "babel src test --out-dir .compiled --source-maps --watch --verbose"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +16,9 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4"
+    "@babel/preset-env": "^7.4.4",
+    "jest": "^24.7.1",
+    "supertest": "^4.0.2"
   },
   "babel": {
     "presets": [
